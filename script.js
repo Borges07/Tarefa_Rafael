@@ -7,7 +7,14 @@ const citacoes = [
 const citacaoEl = document.getElementById("citacao");
 const botaoEl = document.getElementById("novaCitacaoBtn");
 
+citacaoEl.style.transition = "opacity 0.5s ease";
+
 botaoEl.addEventListener("click", () => {
-  const randomIndex = Math.floor(Math.random() * citacoes.length);
-  citacaoEl.textContent = citacoes[randomIndex];
+  citacaoEl.style.opacity = 0; 
+
+  setTimeout(() => {
+    const randomIndex = Math.floor(Math.random() * citacoes.length);
+    citacaoEl.textContent = citacoes[randomIndex];
+    citacaoEl.style.opacity = 1; 
+  }, 500); 
 });
